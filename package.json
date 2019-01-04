@@ -22,7 +22,7 @@
     ],
     "aiKey": "90c182a8-8dab-45d4-bfb8-1353eb55aa7f",
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.29.0"
     },
     "categories": [
         "Other"
@@ -36,8 +36,6 @@
         "onCommand:java.test.explorer.select",
         "onCommand:java.test.explorer.run",
         "onCommand:java.test.explorer.debug",
-        "onCommand:java.test.explorer.run.config",
-        "onCommand:java.test.explorer.debug.config",
         "onCommand:java.test.run",
         "onCommand:java.test.debug",
         "onCommand:java.test.cancel",
@@ -88,16 +86,6 @@
                     "group": "testExplorer@1"
                 },
                 {
-                    "command": "java.test.explorer.run.config",
-                    "when": "view == testExplorer",
-                    "group": "testExplorer@2"
-                },
-                {
-                    "command": "java.test.explorer.debug.config",
-                    "when": "view == testExplorer",
-                    "group": "testExplorer@3"
-                },
-                {
                     "command": "java.test.explorer.refresh",
                     "when": "view == testExplorer",
                     "group": "testExplorer@4"
@@ -110,14 +98,6 @@
                 },
                 {
                     "command": "java.test.explorer.debug",
-                    "when": "never"
-                },
-                {
-                    "command": "java.test.explorer.run.config",
-                    "when": "never"
-                },
-                {
-                    "command": "java.test.explorer.debug.config",
                     "when": "never"
                 },
                 {
@@ -156,16 +136,6 @@
                 "category": "Java"
             },
             {
-                "command": "java.test.explorer.run.config",
-                "title": "%contributes.commands.java.test.explorer.run.config.title%",
-                "category": "Java"
-            },
-            {
-                "command": "java.test.explorer.debug.config",
-                "title": "%contributes.commands.java.test.explorer.debug.config.title%",
-                "category": "Java"
-            },
-            {
                 "command": "java.test.cancel",
                 "title": "%contributes.commands.java.test.cancel.title%",
                 "category": "Java"
@@ -178,12 +148,6 @@
                     "dark": "resources/media/dark/refresh.svg"
                 },
                 "category": "Java"
-            }
-        ],
-        "jsonValidation": [
-            {
-                "fileMatch": "launch.test.json",
-                "url": "./launch.test.schema.json"
             }
         ],
         "configuration": {
@@ -209,6 +173,36 @@
                     "default": "info",
                     "description": "%configuration.java.test.log.level.description%",
                     "scope": "application"
+                },
+                "java.test.cwd": {
+                    "type": "string",
+                    "description": "%configuration.java.test.cwd.description%",
+                    "default": "${workspaceFolder}",
+                    "scope": "resource"
+                },
+                "java.test.vmargs": {
+                    "type": "array",
+                    "description": "%configuration.java.test.vmargs.description%",
+                    "default": [],
+                    "scope": "resource"
+                },
+                "java.test.args": {
+                    "type": "array",
+                    "description": "%configuration.java.test.args.description%",
+                    "default": [],
+                    "scope": "resource"
+                },
+                "java.test.env": {
+                    "type": "object",
+                    "description": "%configuration.java.test.env.description%",
+                    "default": {"key": "value"},
+                    "scope": "resource"
+                },
+                "java.test.preLaunchTask": {
+                    "type": "string",
+                    "description": "%configuration.java.test.preLaunchTask.description%",
+                    "default": "<Provide the preLaucnTask Name>",
+                    "scope": "resource"
                 }
             }
         }

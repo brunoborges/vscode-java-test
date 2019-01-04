@@ -12,3 +12,10 @@ export const DEFAULT_LOG_LEVEL: string = 'info';
 
 export const REPORT_POSITION_SETTING_KEY: string = 'java.test.report.position';
 export const DEFAULT_REPORT_POSITION: string = 'sideView';
+
+export const CWD_KEY: string = 'java.test.cwd';
+export const DEFAULT_CWD: string = '${workspaceFolder}';
+export const ARGS_KEY: string = 'java.test.args';
+export const VM_ARGS_KEY: string = 'java.test.vmargs';
+export const ENV_KEY: string = 'java.test.env';
+export const PRE_LAUNCH_TASK_KEY: string = 'java.test.preLaunchTask';
